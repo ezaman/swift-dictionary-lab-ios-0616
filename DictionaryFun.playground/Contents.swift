@@ -1,13 +1,13 @@
 /*: Outline
-
-
+ 
+ 
  # Dictionary
-
+ 
  ### Readings associated with this lab
-
+ 
  * [Dictionary](https://github.com/learn-co-curriculum/swift-dictionary-readme)
-
-
+ 
+ 
  */
 /*: question1
  ### 1. Given the following states, New York, Ohio, Florida, Georgia and Kentucky, create a dictionary which stores these states along with their capitals. The capitals of these states are as follows (in the correct order), Albany, Columbus, Tallahassee, Atlanta, and Frankfort.
@@ -15,12 +15,13 @@
 // write your code here
 
 
+var usStatesAndCapitals = ["New York" : "Albany", "Ohio" : "Columbus", "Florida" : "Tallahassee", "Georgia" : "Altanta", "Kentucky" : "Franfort"]
 
 
 /*: question2
  ### 2. What is the type of the dictionary you created in Question 1?
  */
-
+// A  dictionary of type string:string since states and capitals are words.
 
 
 
@@ -28,7 +29,7 @@
  ### 3. Create a variable called `capital` and assign to it Florida's capital from the dictionary.
  */
 // write your code here
-
+var capital = usStatesAndCapitals["Florida"]
 
 
 
@@ -37,6 +38,10 @@
  */
 // write your code here
 
+if let florida = capital{
+    print("The capital of Florida is \(capital)")
+    
+}
 
 
 
@@ -45,7 +50,7 @@
  */
 // write your code here
 
-
+var anotherCapital = usStatesAndCapitals["Pennsylvania"]
 
 
 /*: question6
@@ -53,14 +58,19 @@
  */
 // write your code here
 
-
+if let penn = anotherCapital {
+    "The capital of Penn is \(anotherCapital)"
+}else{
+    "Pennsylvania is not in the dictionary, dude"
+}
 
 
 /*: question7
  ### 7. Pennsylvania's capital is Harrisburg. Add it to your state capitals dictionary.
  */
 // write your code here
-
+usStatesAndCapitals["Pennsylvania"] = "Harrisburg"
+print(usStatesAndCapitals)
 
 
 
@@ -69,14 +79,17 @@
  */
 // write your code here
 
-
+if let harris = usStatesAndCapitals["Pennsylvania"]{
+    "The capital of Pennsylvania is \(harris)"
+}
 
 
 /*: question9
  ### 9. We don't really care about Pennsylvania's capital. Delete it from the dictionary. Print your dictionary to the console to ensure it's gone.
  */
 // write your code here
-
+usStatesAndCapitals["Pennsylvania"] = nil
+print(usStatesAndCapitals)
 
 
 
@@ -86,28 +99,35 @@
 let state = "New York"
 // write your code here
 
-
+if let cuomo = usStatesAndCapitals[state] {
+    "The capital of \(state) is \(cuomo)"
+}
 
 
 /*: question11
  ### 11. Dictionaries don't have to contain just `String` keys and values. Create a dictionary that contains the name of a band, and the members of that band. Here are the bands and members that you can use:
-
+ 
  * Nirvana: Kurt Cobain, Krist Novoselic, Dave Grohl
  * The Beatles: John Lennon, George Harrison, Paul McCartney, Ringo Starr
  * The Breeders: Kim Deal, Kelley Deal, Josephine Wiggs, Jim Macpherson
  * Pixies: Frank Black, Joey Santiago, Kim Deal, David Lovering
-
+ 
  Since there are multiple members for each band, the value of each key should be an `Array`.
  */
 // write your code here
 
-
+var popularBands =
+    [     "Nirvana"  : ["Kurt Cobain", "Krist Novoselic", "Dave Grohl"],
+       "The Beatles" : ["John Lennon", "George Harrison", "Paul McCartney", "Ringo Starr"],
+      "The Breeders" :  ["Kim Deal", "Kelley Deal", "Josephine Wiggs", "Jim Macpherson"],
+            "Pixies" : ["Frank Black", "Joey Santiago", "Kim Deal", "David Lovering"]
+        ]
 
 
 /*: question12
  ### 12. What is the type of the dictionary you created in Question 11?
  */
-
+//The dictionary is of type String: [String]
 
 
 
@@ -117,6 +137,9 @@ let state = "New York"
 let bandName = "Pixies"
 // write your code here
 
+if let pixies = popularBands["Pixies"] {
+   print( "The members of the \(bandName) are \(pixies)")
+}
 
 
 
